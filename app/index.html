@@ -3,23 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div>
+    <p class="kicker">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
+    <h1>Leonida Platinum</h1>
+    <p class="sub">GTA 6 trophy guide &amp; tracker — every official name, description and grade, a roadmap to the platinum, missable flags, and a cited guide for each trophy. Offline: this app loads nothing from the network.</p>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <p class="big" id="progressBig">0 of 55 earned</p>
+    <div class="bar"><div class="bar-fill" id="progressBar" style="width:0%"></div></div>
+    <p class="counts" id="progressCounts"></p>
+    <p class="counts" id="progressKinds"></p>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+<nav class="tabs" aria-label="Sections">
+  <a href="#tracker" data-tab="tracker" id="tab-tracker">Tracker</a>
+  <a href="#roadmap" data-tab="roadmap" id="tab-roadmap">Roadmap</a>
+  <a href="#missables" data-tab="missables" id="tab-missables">Missables</a>
+</nav>
+<section class="controls" aria-label="Tracker controls">
+  <label>Search <input id="search" type="search" placeholder="Search name or description…"></label>
+  <label>Kind <select id="kind"><option value="all">All kinds</option><option value="story">Story</option><option value="missable">Missable</option><option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="online">Online</option></select></label>
+  <label>Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label class="spoiler"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
   <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
-<script type="module" src="app.js"></script>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+</section>
+<p class="note" id="onlineNote" hidden>The official list holds no online trophies — the Online filter has 0 results. Every trophy here can be earned offline.</p>
+<main>
+  <section id="view-tracker" class="view">
+    <div class="split">
+      <div>
+        <p class="result-count" id="resultCount"></p>
+        <ul class="checklist" id="rows"></ul>
+      </div>
+      <aside class="detail" id="detail" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p>Built from the official descriptions, in the order to earn them. Story first — mission replayability is unconfirmed at launch, so earn every story trophy during its mission. Then collectibles, then the activity grinds, then money and cleanup. The platinum pops last.</p>
+    <div id="roadmap"></div>
+  </section>
+  <section id="view-missables" class="view" hidden>
+    <h2>Missable trophies — 28 to watch</h2>
+    <p>Every story-chapter and story-mission trophy is story-gated: earn it during that chapter or mission, because mission replayability is unconfirmed at launch. Partner, choice and event trophies are missable for the same reason — they need a partner present, a choice, or a one-time moment. <strong>Collectibles and count-based activities are NOT missable</strong>: they can be done any time, including after the story.</p>
+    <div id="missables"></div>
+  </section>
+</main>
+<footer>
+  <p>Sources for every name, description, grade and count: <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase — GTA VI trophy list</a> and <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles — GTA VI trophy list</a>. Guides are our own words, drawn from the official description — the game released 19 Nov 2026 and in-game details are not yet verified. Unofficial fan guide; no Rockstar logo, artwork or font is used.</p>
+</footer>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

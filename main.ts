@@ -1,4 +1,4 @@
-// A working gta6-trophy-guide-01 entry (Node 22, standard library only): the guide is this directory's app/ folder,
+// Leonida Platinum — GTA 6 trophy guide and tracker (gta6-trophy-guide-01): the guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/
 // and screenshots/ from beside this file to /output and writes /output/dossier.json, the summary the judge reads (your
